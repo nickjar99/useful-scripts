@@ -22,7 +22,7 @@ def unzip(filename):
     else:
         command = ['unzip', '-o', filename, '-d', outputDir]
 
-    # print(' '.join(command))
+    print(' '.join(command))
     process = Popen(command, stdout=PIPE, stderr=PIPE)
     stdout, stderr = process.communicate()
     print(stdout.decode())
