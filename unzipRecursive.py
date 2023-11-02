@@ -22,7 +22,7 @@ def unzip(filename):
     else:
         command = ['unzip', '-o', filename, '-d', outputDir]
 
-    print(' '.join(command))
+    # print(' '.join(command))
     process = Popen(command, stdout=PIPE, stderr=PIPE)
     stdout, stderr = process.communicate()
     print(stdout.decode())
@@ -33,7 +33,7 @@ def getArchivesAtPath(path):
     result = []
     if os.path.isdir(path):
         for root, subdirs, files in os.walk(path):
-            print(root, subdirs, files)
+            # print(root, subdirs, files)
             for file in files:
                 fullPath = os.path.join(root, file)
                 ext = fullPath.split('.')[-1]
@@ -54,8 +54,8 @@ while True:
         outputDir = unzip(filename)
         pathsToSearch.append(outputDir)
         # Deleting all sub archives but not the original one
-        if filename != args.input:
-            os.remove(filename)
+        # if filename != args.input:
+        #     os.remove(filename)
     if pathsToSearch == []:
         break
 
