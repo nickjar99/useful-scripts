@@ -1,5 +1,5 @@
 from subprocess import Popen, PIPE
-import os, sys
+import os, sys, time
 import pathlib
 import argparse
 
@@ -51,6 +51,7 @@ while True:
         archives.extend(getArchivesAtPath(path))
     pathsToSearch = []
     for filename in archives:
+        time.sleep(1)
         outputDir = unzip(filename)
         pathsToSearch.append(outputDir)
         # Deleting all sub archives but not the original one
