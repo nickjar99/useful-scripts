@@ -51,12 +51,12 @@ while True:
         archives.extend(getArchivesAtPath(path))
     pathsToSearch = []
     for filename in archives:
-        time.sleep(1)
+        # time.sleep(1)
         outputDir = unzip(filename)
         pathsToSearch.append(outputDir)
         # Deleting all sub archives but not the original one
-        # if filename != args.input:
-        #     os.remove(filename)
+        if filename != args.input:
+            os.remove(filename)
     if pathsToSearch == []:
         break
 
