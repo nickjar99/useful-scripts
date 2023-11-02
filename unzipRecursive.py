@@ -13,7 +13,7 @@ pathsToSearch = [args.input]
 def unzip(filename):
     print("Unzipping %s" % filename)
 
-    newFolderName = '.'.join(filename.split('.')[:-1])
+    newFolderName = '.'.join(filename[filename.rfind('/')+1:].split('.')[:-1])
     outputDir = os.path.join(os.path.dirname(filename), newFolderName)
     
     ext = filename.split('.')[-1]
