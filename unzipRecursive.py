@@ -18,9 +18,9 @@ def unzip(filename):
     
     ext = filename.split('.')[-1]
     if ext == 'rar':
-        command = ['unrar', 'x', "\"%s\"" % filename, "\"%s\"" % outputDir]
+        command = ['unrar', 'x', "\'%s\'" % filename, "\'%s\'" % outputDir]
     else:
-        command = ['unzip', '-o', "\"%s\"" % filename, '-d', "\"%s\"" % outputDir]
+        command = ['unzip', '-o', "\'%s\'" % filename, '-d', "\'%s\'" % outputDir]
 
     print(' '.join(command))
     process = Popen(command, stdout=PIPE, stderr=PIPE)
