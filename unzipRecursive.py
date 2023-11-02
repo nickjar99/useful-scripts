@@ -23,7 +23,7 @@ def unzip(filename):
         command = ['unzip', '-o', "\'%s\'" % filename, '-d', "\'%s\'" % outputDir]
 
     print(' '.join(command))
-    process = Popen(command, stdout=PIPE, stderr=PIPE)
+    process = Popen(' '.join(command), stdout=PIPE, stderr=PIPE, shell=True)
     stdout, stderr = process.communicate()
     print(stdout.decode())
     print(stderr.decode())
@@ -33,7 +33,7 @@ def getArchivesAtPath(path):
     result = []
     if os.path.isdir(path):
         for root, subdirs, files in os.walk(path):
-            print(root, subdirs, files)
+            # print(root, subdirs, files)
             for file in files:
                 fullPath = os.path.join(root, file)
                 ext = fullPath.split('.')[-1]

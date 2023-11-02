@@ -10,6 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
+            "args": ["-i", "/home/nick/git_repos.zip"],
             "justMyCode": true
         }
     ]
