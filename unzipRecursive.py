@@ -18,7 +18,7 @@ def unzip(filename):
     
     ext = filename.split('.')[-1]
     if ext == 'rar':
-        command = ['unzip', '-o', filename, '-d', outputDir]
+        command = ['unrar', 'x', filename, outputDir]
     else:
         command = ['unzip', '-o', filename, '-d', outputDir]
 
